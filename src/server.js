@@ -1,14 +1,13 @@
 import {
-  createServer
-} from 'http'
+  randomUUID
+} from 'crypto'
 import {
   once
 } from 'events'
 import {
-  randomUUID
-} from 'crypto'
-
-const Database = new Map()
+  createServer
+} from 'http'
+import Database from './database'
 
 function respondJSON(data, response) {
   return response.end(JSON.stringify(data))
